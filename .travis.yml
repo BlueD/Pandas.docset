@@ -5,7 +5,7 @@ install:
 - unzip pandas.zip
 - doc2dash -n Pandas html
 script:
-- tar czvf Pandas.docset.tgz Pandas.docset/
+- tar czf Pandas.docset.tgz Pandas.docset/
 deploy:
   provider: releases
   api_key:
