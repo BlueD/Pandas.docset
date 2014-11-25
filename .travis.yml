@@ -1,10 +1,16 @@
 language: python
-
 install:
-    - "pip install -r requirements.txt"
-    - "wget 'http://pandas.pydata.org/pandas-docs/version/0.15.1/pandas.zip'"
-    - "unzip pandas.zip"
-    - "doc2dash -n Pandas html"
-
+- pip install -r requirements.txt
+- wget 'http://pandas.pydata.org/pandas-docs/version/0.15.1/pandas.zip'
+- unzip pandas.zip
+- doc2dash -n Pandas html
 script:
-    - "tar czvf Pandas.docset.tgz Pandas.docset"
+- tar czvf Pandas.docset.tgz Pandas.docset/
+deploy:
+  provider: releases
+  api_key:
+    secure: IdHfHsQkD3cFxHCKqCYn+/++dvYJ+Jw4A7zg980j5E80p/JOXASH2IpcFkaQyhwZh8KmDmRC0pMEIeIfcLh3cPAAKEb4PXxAhW+U8YBukLQ9gbUVYP66u8iZCTlsxdS0KZAYSqGSlmew+hvV1BBlYXvQZxNYyvDIy06MLWKyfFw=
+  file: Pandas.docset.tgz
+  skip_cleanup: true
+  on:
+    repo: BlueD/Pandas.docset
