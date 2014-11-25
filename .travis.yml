@@ -1,0 +1,5 @@
+language: python
+
+install:
+    - "pip install -r requirements.txt"
+    - "wget 'http://pandas.pydata.org/pandas-docs/version/0.15.1/pandas.zip'"
