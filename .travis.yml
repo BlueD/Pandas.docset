@@ -5,3 +5,6 @@ install:
     - "wget 'http://pandas.pydata.org/pandas-docs/version/0.15.1/pandas.zip'"
     - "unzip pandas.zip"
     - "doc2dash -n Pandas html"
+
+script:
+    - "tar czvf Pandas.docset.tgz Pandas.docset"
